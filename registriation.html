@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function reg()
+        {
+           var name = document.getElementById("name").value;
+   var email = document.getElementById("email").value;
+   var password = document.getElementById("password").value;
+   var username = document.getElementById("username").value;
+   var phno = document.getElementById("phno").value;
+   var cpassword = document.getElementById("cpassword").value;
+   var gender=document.getElementsByName("gender");
+   var Gender="";
+   for (i = 0; i < gender.length; i++) {
+       if (gender[i].checked)
+           { 
+               Gender=gender[i].value;
+               break;
+           }
+           
+   }
+   if(name == "" || email == "" || password == "" || username == "" || phno =="" || Gender == "")
+   {
+       window.alert("Fill the requirements");
+   }
+   if(password!==cpassword)
+       {
+           window.alert("Password does not match");
+
+       }
+       else
+       {
+           window.alert("login successfully!!!");
+       }
+   
+        }
+    </script>
+
+
+    <style>
+        div.center {
+           background-color: #cccccc;
+           margin: auto;
+             width: 50%;
+            padding: 10px;
+        }
+        body {
+  background-image: linear-gradient(rgb(255, 149, 0), rgb(255, 179, 0));
+}
+        
+        .registration-form {
+            display: flex;
+            justify-content: space-between;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .registration-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form input[type="password"],
+        .registration-form input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .registration-form input[type="radio"] {
+            margin-right: 5px;
+        }
+        
+        button {
+    background-color: rgb(234, 228, 115);
+    border-radius: 1px;
+    padding: 20px;
+    margin-left: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="center">
+    <h1 align="center">Registration form</h1>
+    
+    <div class="registration-form">
+        <div class="left-section">
+            <label >Full Name:</label>
+            <input type="text" name="full-name" id="name" required>
+            <label >Email:</label>
+            <input type="email"  name="email" id="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="right-section">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="phone-number">Phone Number:</label>
+            <input type="tel" id="phno" name="phone-number" required>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="cpassword" name="confirm-password" required>
+        </div>
+    </div><center>
+        <div class="gender-section">
+            <label>Gender:</label>
+            <input type="radio" id="gender" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="gender" name="gender" value="female">
+            <label for="female">Female</label>
+        </div>
+        <button type="submit" onclick="reg()">Register</button>
+    </center>
+</div>
+</body>
+</html>
+
+   
+
